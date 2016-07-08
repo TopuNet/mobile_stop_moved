@@ -43,8 +43,6 @@ var mobile_stop_moved = {
                 var topest = scrollTop == 0 && clientY_now > clientY_start; // 本身在页首，还往下拉动页面
                 var bottemest = scrollHeight == (scrollTop + offsetHeight) && clientY_now < clientY_start; // 本身在页尾，还往上拉动页面
 
-                $("div.level,p.name").html(topest + ":" + scrollTop + ":" + clientY_now + ":" + clientY_start);
-
                 if (neednt || topest || bottemest) {
                     canScroll = false;
                 }
