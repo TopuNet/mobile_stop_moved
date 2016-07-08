@@ -1,23 +1,33 @@
-# mobile_stop_moved JS插件 v1.1.1
+# mobile_stop_moved JS插件 v1.2.1
 ###阻止 IOS/微信 浏览器滑屏时出现上下灰条。同时可以实现盒内滚动回弹
+
+文件结构：
+-------------
+1. mobile_stop_moved.js 放入项目文件夹jq中
 
 页面引用：
 -------------
 1. 页面底端引用最新版 /Jquery.min.js#1.x.x 或 zepto.min.js
-2. Jquery/zepto后引用 /mobile_stop_moved.min.js
+2. Jquery/zepto后引用 /jq/mobile_stop_moved.js
 
 方法调用：
 --------------
 
 		var opt = {
-		    selector: "section.a", // 容器盒选择器（需要在样式表中将此盒定高），无默认值
+		    selector: "section.a", // 容器盒选择器（resize_toWindow为false时，需要在样式表中将此盒定高），无默认值
 		    scroll: true, // 盒内可滚动，默认true
-		    resize_toWindow: true // 将容器盒自动设置为有效窗口高度(window.innerHeight)，并监听窗口大小改变——解决ios safari浏览器底部工具栏遮挡页面的问题
+		    resize_toWindow: true // 将容器盒自动设置为有效窗口高度(window.innerHeight)，并监听窗口大小改变——解决ios safari浏览器底部工具栏遮挡页面的问题，默认true
 		};
 		mobile_stop_moved.init(opt);
 
 更新历史：
 --------------
+
+v 1.2.1
+
+		1. 修改阻止方式，参考文章：https://segmentfault.com/a/1190000003810312?_ea=375925
+		2. 调用方法参数opt.resize_toWindow为true时，不再强制需要给容器盒定高
+		3. 修改demo
 
 v 1.1.1
 
