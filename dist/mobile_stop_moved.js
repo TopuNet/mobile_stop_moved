@@ -1,4 +1,4 @@
-// 1.2.1
+// 2.0.1
 var mobile_stop_moved = {
     /*
         opt:{
@@ -73,3 +73,9 @@ var mobile_stop_moved = {
         }
     }
 };
+
+if (typeof define === "function" && define.amd) {
+    define([], function() {
+        return mobile_stop_moved;
+    });
+}
