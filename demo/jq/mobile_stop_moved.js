@@ -1,4 +1,4 @@
-// 2.0.1
+// 2.0.2
 var mobile_stop_moved = {
     /*
         opt:{
@@ -16,7 +16,7 @@ var mobile_stop_moved = {
         opt = $.extend(opt_default, opt);
 
         // 默认阻止
-        $(document).on("touchmove", function() {
+        $(document).on("touchmove", function(e) {
             e.preventDefault();
             e.stopPropagation();
         });
