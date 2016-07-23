@@ -1,4 +1,4 @@
-// 2.0.2
+// 2.0.3
 var mobile_stop_moved = {
     /*
         opt:{

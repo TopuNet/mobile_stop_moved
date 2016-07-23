@@ -1,9 +1,14 @@
-# mobile_stop_moved JS插件 v2.0.2
+# mobile_stop_moved JS插件 v2.0.3
 ###阻止 IOS/微信 浏览器滑屏时出现上下灰条。同时可以实现盒内滚动回弹。
 ###兼容原生JS规范和AMD规范
 
 更新历史：
 --------------
+
+v 2.0.3	    
+
+		1. 在dist文件夹中，增加package.json
+	    2. 将dist发布到npm：TopuNet-mobile-stop-moved
 
 v 2.0.2
 
