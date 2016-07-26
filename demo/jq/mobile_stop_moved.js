@@ -1,4 +1,4 @@
-// 2.0.4
+// 2.0.5
 var mobile_stop_moved = {
     /*
         opt:{
@@ -28,7 +28,8 @@ var mobile_stop_moved = {
             var clientY_start;
 
             $(document).on("touchstart", function(e) {
-                clientY_start = e.touches[0].clientY;
+                var touches = e.touches || e.originalEvent.touches;
+                var clientY_now = touches[0].clientY;
             });
 
             $(document).unbind("touchmove").on("touchmove", function(e) {
@@ -36,7 +37,8 @@ var mobile_stop_moved = {
                 var scrollHeight = obj[0].scrollHeight; // 盒内内容实际滚动高度
                 var offsetHeight = obj.height(); // 盒高度
                 var scrollTop = obj.scrollTop(); // 盒内内容已滚动高度
-                var clientY_now = e.touches[0].clientY;
+                var touches = e.touches || e.originalEvent.touches;
+                var clientY_now = touches[0].clientY;
                 var canScroll = true;
 
                 var neednt = offsetHeight >= scrollHeight; // 不需要滚动（盒高度>=盒内容高度）

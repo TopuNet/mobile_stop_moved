@@ -1,9 +1,14 @@
-# mobile_stop_moved JS插件 v2.0.4
+# mobile_stop_moved JS插件 v2.0.5
 ###阻止 IOS/微信 浏览器滑屏时出现上下灰条。同时可以实现盒内滚动回弹。
 ###兼容原生JS规范和AMD规范
 
 更新历史：
 --------------
+
+v 2.0.5
+
+	    1. 修改jquery1.x不兼容（之前报错但不影响使用）。主要因为获取触摸对象，juqery为event.originEvent.touches，zepto为event.touches
+	    2. 更新zepto为最新版本。
 
 v 2.0.4
 
