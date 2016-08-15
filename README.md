@@ -1,10 +1,38 @@
-# mobile_stop_moved JS插件 v2.0.5
+# mobile_stop_moved JS插件 v2.0.6
 ###阻止 IOS/微信 浏览器滑屏时出现上下灰条。同时可以实现盒内滚动回弹。
-###兼容原生JS规范和AMD规范
 ###安装：npm install TopuNet-mobile-stop-moved
+
+文件结构：
+-------------
+1. mobile_stop_moved.js 放入项目文件夹jq（原生规范）或widget/lib（AMD规范）中
+
+页面引用：
+-------------
+原生引用
+
+		1. 页面底端引用最新版 /Jquery.min.js#1.x.x 或 zepto.min.js
+		2. Jquery/zepto后引用 /jq/mobile_stop_moved.js
+
+requireJS引用
+
+        依赖mobile_stop_moved.js和(jquery.min.js#1.x 或 zepto.js)，成功后返回对象mobile_stop_moved
+
+方法调用：
+--------------
+
+		var opt = {
+		    selector: "section.a", // 容器盒选择器（resize_toWindow为false时，需要在样式表中将此盒定高），无默认值
+		    scroll: true, // 盒内可滚动，默认true
+		    resize_toWindow: true // 将容器盒自动设置为有效窗口高度(window.innerHeight)，并监听窗口大小改变——解决ios safari浏览器底部工具栏遮挡页面的问题，默认true
+		};
+		mobile_stop_moved.init(opt);
 
 更新历史：
 --------------
+
+v 2.0.6
+
+	    1. 修改bug
 
 v 2.0.5
 
@@ -46,28 +74,3 @@ v 1.0.2
 
 		1. 支持在页面中，先将一个盒设为不可滚动，再设为可以滚动
 		2. 修改demo
-
-文件结构：
--------------
-1. mobile_stop_moved.js 放入项目文件夹jq（原生规范）或widget/lib（AMD规范）中
-
-页面引用：
--------------
-原生引用
-
-		1. 页面底端引用最新版 /Jquery.min.js#1.x.x 或 zepto.min.js
-		2. Jquery/zepto后引用 /jq/mobile_stop_moved.js
-
-requireJS引用
-
-        依赖mobile_stop_moved.js和(jquery.min.js#1.x 或 zepto.js)，成功后返回对象mobile_stop_moved
-
-方法调用：
---------------
-
-		var opt = {
-		    selector: "section.a", // 容器盒选择器（resize_toWindow为false时，需要在样式表中将此盒定高），无默认值
-		    scroll: true, // 盒内可滚动，默认true
-		    resize_toWindow: true // 将容器盒自动设置为有效窗口高度(window.innerHeight)，并监听窗口大小改变——解决ios safari浏览器底部工具栏遮挡页面的问题，默认true
-		};
-		mobile_stop_moved.init(opt);
