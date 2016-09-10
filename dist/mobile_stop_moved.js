@@ -1,4 +1,4 @@
-// 2.0.6
+// 2.0.7
 var mobile_stop_moved = {
     /*
         opt:{
@@ -12,7 +12,7 @@ var mobile_stop_moved = {
             selector: "",
             scroll: true,
             resize_toWindow: true
-        }
+        };
         opt = $.extend(opt_default, opt);
 
         // 默认阻止
@@ -42,7 +42,7 @@ var mobile_stop_moved = {
                 var canScroll = true;
 
                 var neednt = offsetHeight >= scrollHeight; // 不需要滚动（盒高度>=盒内容高度）
-                var topest = scrollTop == 0 && clientY_now > clientY_start; // 本身在页首，还往下拉动页面
+                var topest = scrollTop === 0 && clientY_now > clientY_start; // 本身在页首，还往下拉动页面
                 var bottemest = scrollHeight <= (scrollTop + offsetHeight) && clientY_now < clientY_start; // 本身在页尾，还往上拉动页面
 
                 if (neednt || topest || bottemest) {
@@ -59,14 +59,13 @@ var mobile_stop_moved = {
         if (opt.resize_toWindow) {
             var resize_n = 0;
             var resize_do = function() {
-                if (++resize_n % 2 == 0)
+                if (++resize_n % 2 === 0)
                     return;
                 setTimeout(function() {
                     $(opt.selector).css("height", window.innerHeight);
                     resize_n = 0;
                 }, 0);
-            }
-
+            };
             resize_do();
 
             $(window).resize(function() {

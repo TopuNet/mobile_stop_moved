@@ -1,6 +1,6 @@
 {
   "name": "TopuNet-mobile-stop-moved",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "mobile-stop-moved 阻止 IOS/微信 浏览器滑屏时出现上下灰条。同时可以实现盒内滚动回弹。",
   "main": "mobile_stop_moved.js",
   "scripts": {
