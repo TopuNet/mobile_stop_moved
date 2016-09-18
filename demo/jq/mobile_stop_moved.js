@@ -1,4 +1,4 @@
-// 2.0.7
+// 2.0.8
 var mobile_stop_moved = {
     /*
         opt:{
@@ -16,7 +16,7 @@ var mobile_stop_moved = {
         opt = $.extend(opt_default, opt);
 
         // 默认阻止
-        $(document).on("touchmove", function(e) {
+        $(window).on("touchmove", function(e) {
             e.preventDefault();
             e.stopPropagation();
         });
@@ -27,12 +27,12 @@ var mobile_stop_moved = {
             obj.css("overflow", "scroll").css("-webkit-overflow-scrolling", "touch").css("overflow-scrolling", "touch");
             var clientY_start;
 
-            $(document).on("touchstart", function(e) {
+            $(window).on("touchstart", function(e) {
                 var touches = e.touches || e.originalEvent.touches;
                 clientY_start = touches[0].clientY;
             });
 
-            $(document).unbind("touchmove").on("touchmove", function(e) {
+            $(window).unbind("touchmove").on("touchmove", function(e) {
 
                 var scrollHeight = obj[0].scrollHeight; // 盒内内容实际滚动高度
                 var offsetHeight = obj.height(); // 盒高度
