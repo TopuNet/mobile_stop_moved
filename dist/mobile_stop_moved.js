@@ -1,4 +1,4 @@
-// 2.0.8
+// 2.0.9
 var mobile_stop_moved = {
     /*
         opt:{
@@ -57,14 +57,47 @@ var mobile_stop_moved = {
         }
 
         if (opt.resize_toWindow) {
+
+            var i = 0,
+                orientation_old = window.orientation,
+                orientation,
+                window_size_px = {
+                    width: window.innerWidth - (screen.height - window.innerHeight),
+                    height: window.innerHeight
+                };
             var resize_n = 0;
             var resize_do = function() {
-                if (++resize_n % 2 === 0)
+                // console.log("resize:", resize_n + 1);
+                if (++resize_n % 2 === 0) {
+                    // console.log("return");
                     return;
+                }
+
                 setTimeout(function() {
-                    $(opt.selector).css("height", window.innerHeight);
+                    // console.log(window_size_px.width, window_size_px.height, screen.height);
+                    orientation = window.orientation;
+                    // console.log(orientation == orientation_old);
+                    // console.log(window_size_px.height);
+                    // console.log($(opt.selector).length);
+                    if (orientation == orientation_old) {
+                        // console.log("true");
+                        $(opt.selector).css("height", window_size_px.height + "px");
+                    } else {
+                        // console.log("false");
+                        $(opt.selector).css("height", window_size_px.width + "px");
+                    }
                     resize_n = 0;
                 }, 0);
+
+                // 专为手机浏览器配置代码，但只解决了安卓浏览器，ios还是没解决
+                setTimeout(function() {
+                    var innerHeight_px = window.innerHeight;
+                    if (orientation == orientation_old)
+                        window_size_px.height = innerHeight_px;
+                    else
+                        window_size_px.width = innerHeight_px;
+                    $(opt.selector).css("height", innerHeight_px + "px");
+                }, 500);
             };
             resize_do();
 
