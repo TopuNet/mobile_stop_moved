@@ -1,7 +1,7 @@
 # mobile_stop_moved JS插件 v2.0.9
-###阻止 IOS/微信 浏览器滑屏时出现上下灰条。同时可以实现盒内滚动回弹。
-###在ios 10.3的safari浏览器中，竖屏变横屏还是有问题，但感觉不是此插件问题，鉴于移动端多配合landscape禁横屏，所以先不纠结了
-###安装：npm install TopuNet-mobile-stop-moved
+### 阻止 IOS/微信 浏览器滑屏时出现上下灰条。同时可以实现盒内滚动回弹。
+### 在ios 10.3的safari浏览器中，竖屏变横屏还是有问题，但感觉不是此插件问题，鉴于移动端多配合landscape禁横屏，所以先不纠结了
+### 安装：npm install TopuNet-mobile-stop-moved
 
 文件结构：
 -------------
